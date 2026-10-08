@@ -14,13 +14,13 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t prt-cicd:latest .'
+                sh ' sudo docker build -t prt-cicd:latest .'
             }
         }
 
         stage('Verify Docker Image') {
             steps {
-                sh 'docker images prt-cicd'
+                sh 'sudo docker images prt-cicd'
             }
         }
     }
