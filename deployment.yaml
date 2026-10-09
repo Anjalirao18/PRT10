@@ -1,0 +1,21 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prt-cicd-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: prt-cicd
+  template:
+    metadata:
+      labels:
+        app: prt-cicd
+    spec:
+      containers:
+        - name: prt-cicd-container
+          image: anjali1551/prt-ci-cd:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
